@@ -25,7 +25,7 @@ module.exports = function (value, context) {
   if (snaps.hasOwnProperty(testName)) {
     const existingSnap = snaps[ testName ]
     const newSnap      = stringify(target)
-    const diffResult   = jsDiff.diffLines(existingSnap, newSnap, { ignoreWhitespace: true, newlineIsToken: true })
+    const diffResult   = jsDiff.diffLines(existingSnap, newSnap, { newlineIsToken: true })
 
     snapDidChange = diffResult.some(it => it.removed || it.added)
 
